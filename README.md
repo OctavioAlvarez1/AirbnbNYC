@@ -78,7 +78,7 @@ El siguiente pipeline resume el flujo completo:
 4. ☁️ Almacenamiento en **AWS S3** (público)
 5. 📊 Visualización desde Power BI vía URL Parquet
 
-![Pipeline](./Captura%20de%20pantalla%202025-07-29%20141122.png)
+<img src="Imagenes/pipeline.png" alt="Dashboard Airbnb NYC" width="800">
 
 ---
 
