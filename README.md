@@ -61,7 +61,8 @@ Incluye información detallada de anuncios publicados en Airbnb:
 
 ### 📸 Captura del dashboard final:
 
-![Dashboard](./Captura%20de%20pantalla%202025-07-29%20133415.png)
+![Dashboard](Imagenes/dashboard.png)
+
 
 ---
 
