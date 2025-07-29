@@ -61,7 +61,7 @@ Incluye información detallada de anuncios publicados en Airbnb:
 
 ### 📸 Captura del dashboard final:
 
-<img src="Imagenes/dashboard1.png" alt="Dashboard Airbnb NYC" width="800">
+<img src="Imagenes/dashboard1.jpg" alt="Dashboard Airbnb NYC" width="800">
 
 
 
