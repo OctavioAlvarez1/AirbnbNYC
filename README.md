@@ -40,6 +40,19 @@ Incluye información detallada de anuncios publicados en Airbnb:
 7. ✅ Conexión directa desde Power BI a la URL de S3
 
 ---
+## 🔍 Exploración de Datos (EDA)
+Durante el análisis exploratorio, se realizaron los siguientes pasos clave:
+ 
+ - Análisis de valores faltantes: se identificaron campos con nulos, como name y reviews_per_month, pero no afectaban el análisis principal.
+ - Eliminación de duplicados: el dataset no contenía filas repetidas.
+ - Detección de outliers: se filtraron precios fuera del rango razonable (<10 o >1000 USD).
+ - Distribución por tipo de habitación: predominan las viviendas completas, seguidas de habitaciones privadas.
+ - Mapa de calor: se observó mayor concentración de anuncios en Manhattan y Brooklyn.
+ - Análisis de disponibilidad: se clasificaron los anuncios según su availability_365.
+
+Cada gráfico fue acompañado de su interpretación dentro del notebook de EDA.
+
+---
 
 ## 💡 Panel de visualización
 
@@ -63,9 +76,6 @@ Incluye información detallada de anuncios publicados en Airbnb:
 
 <img src="Imagenes/dash.png" alt="Dashboard Airbnb NYC" width="800">
 
-
-
-
 ---
 
 ## 🏗️ Arquitectura del pipeline
@@ -81,32 +91,23 @@ El siguiente pipeline resume el flujo completo:
 <img src="Imagenes/pipeline1.png" alt="Pipeline" width="800">
 
 ---
+## 🧾 Conclusiones
 
-## 🚫 Limitaciones
 
-- No se incluyó análisis temporal ni tendencias mensuales.
-- La geolocalización fue usada solo para mapeo, no para segmentaciones espaciales avanzadas.
+- Manhattan concentra la mayor cantidad de anuncios, especialmente de viviendas completas.
 
----
+- La mayoría de los anuncios tienen buena disponibilidad (>200 días al año), lo que indica alta actividad de los anfitriones.
 
-## 🎯 Futuras mejoras
+- El precio promedio se mantiene por debajo de 200 USD, con variabilidad según tipo de habitación y distrito.
 
-- Integrar **Amazon Athena** como fuente directa para Power BI.
-- Incluir análisis de predicción de precios mediante ML.
-- Desarrollar una PWA para visualización desde móvil.
+- El formato Parquet y el uso de AWS S3 permitió optimizar la carga y mantener actualizado el dataset en Power BI sin necesidad de almacenar archivos localmente.
 
----
-
-## 📅 Estado del proyecto
-
-✅ **Completado y funcional**
 
 ---
 
 ## 👤 Autor
 
 **Octavio Alvarez**  
-[LinkedIn](https://www.linkedin.com/in/octavioalvarez)
 
 ---
 
