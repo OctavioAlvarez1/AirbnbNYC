@@ -61,7 +61,7 @@ Incluye información detallada de anuncios publicados en Airbnb:
 
 ### 📸 Captura del dashboard final:
 
-<img src="Imagenes/dashboard.png" alt="Dashboard Airbnb NYC" width="800">
+<img src="Imagenes/dashboard1.png" alt="Dashboard Airbnb NYC" width="800">
 
 
 
@@ -78,7 +78,7 @@ El siguiente pipeline resume el flujo completo:
 4. ☁️ Almacenamiento en **AWS S3** (público)
 5. 📊 Visualización desde Power BI vía URL Parquet
 
-<img src="Imagenes/pipeline.png" alt="Pipeline" width="800">
+<img src="Imagenes/pipeline1.png" alt="Pipeline" width="800">
 
 ---
 
