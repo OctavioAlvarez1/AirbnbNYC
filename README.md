@@ -1,107 +1,110 @@
-🌆 Análisis y Visualización de Airbnb NYC
+# 🌆 Análisis y Visualización de Airbnb NYC
 
 Este proyecto tiene como objetivo analizar y visualizar datos de Airbnb en la ciudad de Nueva York, utilizando herramientas de procesamiento de datos en Python, almacenamiento en la nube con AWS S3, y visualización interactiva mediante Power BI.
 
-🚀 Tecnologías utilizadas
+---
 
-Python (pandas, pyarrow): para limpieza y transformación de datos.
+## 🚀 Tecnologías utilizadas
 
-AWS S3: almacenamiento de archivos Parquet accesibles desde URL.
+- **Python** (`pandas`, `pyarrow`): limpieza y transformación de datos.
+- **AWS S3**: almacenamiento de archivos Parquet accesibles desde URL pública.
+- **Power BI**: visualización de datos, KPI, mapas y análisis interactivo.
+- **Formato Parquet**: optimiza el rendimiento en la carga y consulta de datos.
 
-Power BI: visualización de datos, KPI, mapas, y análisis interactivo.
+---
 
-Formato Parquet: optimización del rendimiento en carga de datos.
+## 📊 Dataset
 
-📊 Dataset
+El dataset fue extraído de Kaggle: [New York City Airbnb Open Data](https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data)
 
-El dataset fue extraído de Kaggle: New York City Airbnb Open Data
+Incluye información detallada de anuncios publicados en Airbnb:
 
-Contiene información detallada de anuncios publicados en Airbnb incluyendo:
+- ID de anuncio y anfitrión
+- Localización geográfica
+- Tipo de habitación
+- Precio por noche
+- Mínimo de noches requeridas
+- Disponibilidad en el año (`availability_365`)
+- Número de reseñas y más
 
-ID de anuncio y anfitrión
+---
 
-Localización geográfica
+## 📁 Proceso ETL
 
-Tipo de habitación
+1. ✅ Carga del archivo original en formato CSV
+2. ✅ Limpieza de filas incompletas o erróneas
+3. ✅ Conversión de columnas a tipos numéricos válidos
+4. ✅ Filtrado de precios sospechosos (`price < 10` o `price > 1000`)
+5. ✅ Exportación a formato `.parquet` para optimizar carga
+6. ✅ Subida del archivo limpio a un bucket público en AWS S3
+7. ✅ Conexión directa desde Power BI a la URL de S3
 
-Precio por noche
+---
 
-Cantidad de noches mínimas
+## 💡 Panel de visualización
 
-Disponibilidad anual
+### 🧮 Métricas clave:
 
-Reviews y más
+- **Precio promedio general**
+- **Total de anuncios**
+- **Cantidad de anfitriones**
+- **Total de barrios**
+- **% Ocupación ideal** (availability > 200 días)
+- **% Alojamiento tipo "entire home"**
+- **% Anuncios en Manhattan**
 
-📁 Proceso ETL
+### 📊 Gráficos:
 
-Se limpiaron datos erróneos y filas incompletas.
+- Top 5 distritos con más anuncios
+- Distribución por tipo de habitación
+- Mapa interactivo de barrios
 
-Se filtraron outliers (precio < 10 o > 1000).
+### 📸 Captura del dashboard final:
 
-Se exportó el dataset limpio como Parquet.
+![Dashboard](./Captura%20de%20pantalla%202025-07-29%20133415.png)
 
-El archivo se subió a AWS S3 con acceso público.
+---
 
-Power BI consume directamente desde la URL S3.
+## 🏗️ Arquitectura del pipeline
 
-💡 Panel de visualización
+El siguiente pipeline resume el flujo completo:
 
-Métricas destacadas:
+1. 🧾 Carga de datos CSV desde Kaggle
+2. 🧹 ETL en Python (`pandas`, `pyarrow`)
+3. 📦 Exportación a Parquet
+4. ☁️ Almacenamiento en **AWS S3** (público)
+5. 📊 Visualización desde Power BI vía URL Parquet
 
-Precio promedio general
+![Pipeline](./Captura%20de%20pantalla%202025-07-29%20141122.png)
 
-Total de anuncios, anfitriones y barrios
+---
 
-Porcentaje de ocupación ideal (>200 días/año)
+## 🚫 Limitaciones
 
-Porcentaje de alojamientos completos y en Manhattan
+- No se incluyó análisis temporal ni tendencias mensuales.
+- La geolocalización fue usada solo para mapeo, no para segmentaciones espaciales avanzadas.
 
-Gráficos:
+---
 
-Top 5 distritos con más anuncios
+## 🎯 Futuras mejoras
 
-Distribución por tipo de habitación
+- Integrar **Amazon Athena** como fuente directa para Power BI.
+- Incluir análisis de predicción de precios mediante ML.
+- Desarrollar una PWA para visualización desde móvil.
 
-Mapa interactivo de barrios
+---
 
-Captura del dashboard final:
+## 📅 Estado del proyecto
+
+✅ **Completado y funcional**
+
+---
+
+## 👤 Autor
+
+**Octavio Alvarez**  
+[LinkedIn](https://www.linkedin.com/in/octavioalvarez)
+
+---
 
 
-
-🏗️ Arquitectura del pipeline
-
-El siguiente pipeline resume el flujo de trabajo del proyecto:
-
-
-
-Carga de datos locales en formato CSV
-
-Limpieza y transformación en Python
-
-Exportación a Parquet
-
-Carga a AWS S3 con permisos de acceso público
-
-Visualización en Power BI desde la URL
-
-🚫 Limitaciones
-
-No se consideró la evolución temporal ni tendencias por mes.
-
-La ubicación se usó solo en el mapa, no en segmentaciones espaciales avanzadas.
-
-🎯 Futuras mejoras
-
-Conexión directa con Athena desde Power BI
-
-Análisis de predicción de precios con ML
-
-Dashboard PWA para dispositivos móviles
-
-📅 Estado del proyecto
-
-✅ Completado y funcional.
-
-👤 Autor
-
-Octavio AlvarezLinkedIn
